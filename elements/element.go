@@ -48,12 +48,12 @@ func (element *Element) setData(newData *data.DictEntry) {
 
 // Zugriffsfunktion für den Schlüssel des Elements.
 func (element Element) Key() string {
-	return element.data.Word
+	return element.data.Key()
 }
 
 // Zugriffsfunktion für den Wert des Elements.
 func (element Element) Value() []string {
-	return element.data.Translations
+	return element.data.Value()
 }
 
 // Zugriffsfunktion für die gesamten Daten des Elements.

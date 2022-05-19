@@ -12,6 +12,9 @@ func ExampleDictEntry() {
 	e1.AddTranslation("building")
 	fmt.Println(e1)
 
+	fmt.Println(e1.Key())
+	fmt.Println(e1.Value())
+
 	e2 := NewDictEntry("Katze", "cat", "tiger")
 	fmt.Println(e2)
 
@@ -19,5 +22,7 @@ func ExampleDictEntry() {
 	// Haus: <Keine Übersetzung>
 	// Haus: house
 	// Haus: house, building
+	// Haus
+	// [house building]
 	// Katze: cat, tiger
 }

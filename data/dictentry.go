@@ -42,3 +42,13 @@ func (entry DictEntry) String() string {
 	}
 	return result
 }
+
+// Generisch benannte Zugriffsfunktion für den Schlüssel eines Eintrags.
+func (entry DictEntry) Key() string {
+	return entry.Word
+}
+
+// Generisch benannte Zugriffsfunktion für den Wert eines Eintrags.
+func (entry DictEntry) Value() []string {
+	return entry.Translations
+}
