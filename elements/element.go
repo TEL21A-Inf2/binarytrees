@@ -1,10 +1,8 @@
 package elements
 
-import "github.com/tel21a-inf2/binarytrees/data"
-
 // Datentyp für Elemente eines Baumes.
 type Element struct {
-	data        *data.DictEntry
+	data        ElementData
 	left, right *Element
 }
 
@@ -38,7 +36,7 @@ func (element *Element) Clear() {
 
 // Setzt ein neues Datenelement.
 // Falls das Element bisher leer war, werden zwei neue leere Kinder angehängt.
-func (element *Element) setData(newData *data.DictEntry) {
+func (element *Element) setData(newData ElementData) {
 	if element.IsEmpty() {
 		element.left = NewElement()
 		element.right = NewElement()
@@ -57,6 +55,6 @@ func (element Element) Value() []string {
 }
 
 // Zugriffsfunktion für die gesamten Daten des Elements.
-func (element Element) Data() *data.DictEntry {
+func (element Element) Data() ElementData {
 	return element.data
 }
