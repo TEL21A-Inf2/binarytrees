@@ -51,6 +51,11 @@ func (element Element) Key() string {
 	return element.data.Word
 }
 
+// Zugriffsfunktion für den Wert des Elements.
+func (element Element) Value() []string {
+	return element.data.Translations
+}
+
 // Zugriffsfunktion für die gesamten Daten des Elements.
 func (element Element) Data() *data.DictEntry {
 	return element.data

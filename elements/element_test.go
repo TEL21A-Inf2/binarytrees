@@ -14,11 +14,13 @@ func ExampleElement_DictEntry() {
 	element1.setData(data1)
 	fmt.Println(element1.IsEmpty())
 	fmt.Println(element1.Key())
+	fmt.Println(element1.Value())
 	fmt.Println(element1.Data())
 
 	// Output:
 	// true
 	// false
 	// Haus
+	// [house building]
 	// Haus: house, building
 }
