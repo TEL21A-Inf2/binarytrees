@@ -1,5 +1,7 @@
 package elements
 
+import "fmt"
+
 // Datentyp für Elemente eines Baumes.
 type Element[KeyType comparable, ValueType any] struct {
 	data        ElementData[KeyType, ValueType]
@@ -57,4 +59,20 @@ func (element Element[KeyType, ValueType]) Value() ValueType {
 // Zugriffsfunktion für die gesamten Daten des Elements.
 func (element Element[KeyType, ValueType]) Data() ElementData[KeyType, ValueType] {
 	return element.data
+}
+
+// String-Darstellung von Elementen.
+func (element Element[KeyType, ValueType]) String() string {
+	if element.IsEmpty() {
+		return "<empty>"
+	}
+	return fmt.Sprintf("%s", element.data.String())
+}
+
+// Gibt den Baum in In-Order-Darstellung aus.
+func (element Element[KeyType, ValueType]) InOrderString() string {
+	if element.IsEmpty() {
+		return ""
+	}
+	return fmt.Sprintf("%s%s\n%s", element.left.InOrderString(), element.data, element.right.InOrderString())
 }

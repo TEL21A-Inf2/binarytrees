@@ -4,4 +4,5 @@ package elements
 type ElementData[KeyType comparable, ValueType any] interface {
 	Key() KeyType
 	Value() ValueType
+	String() string
 }
