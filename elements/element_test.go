@@ -7,7 +7,7 @@ import (
 )
 
 func ExampleElement_DictEntry() {
-	element1 := NewElement()
+	element1 := NewElement[string, []string]()
 	fmt.Println(element1.IsEmpty())
 
 	data1 := data.NewDictEntry("Haus", "house", "building")
