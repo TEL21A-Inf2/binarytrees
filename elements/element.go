@@ -1,6 +1,10 @@
 package elements
 
-import "github.com/tel21a-inf2/binarytrees/data"
+import (
+	"fmt"
+
+	"github.com/tel21a-inf2/binarytrees/data"
+)
 
 // Datentyp für Elemente eines Baumes.
 type Element struct {
@@ -59,4 +63,20 @@ func (element Element) Value() []string {
 // Zugriffsfunktion für die gesamten Daten des Elements.
 func (element Element) Data() *data.DictEntry {
 	return element.data
+}
+
+// String-Darstellung von Elementen.
+func (element Element) String() string {
+	if element.IsEmpty() {
+		return "<empty>"
+	}
+	return element.data.String()
+}
+
+// Gibt den Baum in In-Order-Darstellung aus.
+func (element Element) InOrderString() string {
+	if element.IsEmpty() {
+		return ""
+	}
+	return fmt.Sprintf("%s%s\n%s", element.left.InOrderString(), element.data, element.right.InOrderString())
 }
