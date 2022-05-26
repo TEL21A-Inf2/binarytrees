@@ -98,3 +98,10 @@ Hat es nur ein Kind, kann es einfach überbrückt werden.
 Ist es ein "echter" innerer Knoten, muss sein In-Order-Nachfolger oder -Vorgänger
 gesucht und das Element damit vertauscht werden. Anschließend muss es rekursiv
 von seiner neuen Position entfernt werden.
+
+## Rück-Übersetzung
+
+Implementieren Sie eine Methode für den Baum, die ein englisches Wort erwartet
+und das entsprechende deutsche Wort liefert.
+
+Welche Komplexität hat diese Methode?
