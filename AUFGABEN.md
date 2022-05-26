@@ -1,5 +1,12 @@
 # Aufgaben zu binären Suchbäumen
 
+## Aufsuchen von Elementen
+
+Schreiben Sie eine Methode `Get()` für den Element-Datentyp.
+Die Funktion soll einen String erwarten, das Element aufsuchen, das diesen String als
+`Key` hat und einen Pointer auf dessen Datensatz liefern.
+Gibt es kein solches Element, soll `nil` geliefert werden.
+
 ## Optimierung der `Add()`-Methode
 
 Schreiben Sie die Methode `Add()` des Element-Datentyps so um, dass sie *Tail-Recursion*
