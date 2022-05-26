@@ -1,20 +1,20 @@
 package elements
 
-import "fmt"
+import "github.com/tel21a-inf2/binarytrees/data"
 
 // Datentyp für Elemente eines Baumes.
-type Element[KeyType comparable, ValueType any] struct {
-	data        ElementData[KeyType, ValueType]
-	left, right *Element[KeyType, ValueType]
+type Element struct {
+	data        *data.DictEntry
+	left, right *Element
 }
 
 // Konstruktor für Baum-Elemente.
-func NewElement[KeyType comparable, ValueType any]() *Element[KeyType, ValueType] {
-	return &Element[KeyType, ValueType]{nil, nil, nil}
+func NewElement() *Element {
+	return &Element{nil, nil, nil}
 }
 
 // Liefert true, falls dieses Element leer ist.
-func (element Element[KeyType, ValueType]) IsEmpty() bool {
+func (element Element) IsEmpty() bool {
 	// Es wird nur geprüft, ob data==nil ist.
 	// Wir werden bei den Baum-Implementierungen dafür sorgen,
 	// dass in diesem Fall auch die beiden Kind-Pointer nil sind.
@@ -23,7 +23,7 @@ func (element Element[KeyType, ValueType]) IsEmpty() bool {
 
 // Leert das Element.
 // D.h. löscht die Daten, leert rekursiv die Kinder und löscht sie.
-func (element *Element[KeyType, ValueType]) Clear() {
+func (element *Element) Clear() {
 	// Diese Funktion ist wichtig, um keine Speicherlecks zu hinterlassen.
 	element.data = nil
 	if element.left != nil {
@@ -38,41 +38,25 @@ func (element *Element[KeyType, ValueType]) Clear() {
 
 // Setzt ein neues Datenelement.
 // Falls das Element bisher leer war, werden zwei neue leere Kinder angehängt.
-func (element *Element[KeyType, ValueType]) setData(newData ElementData[KeyType, ValueType]) {
+func (element *Element) setData(newData *data.DictEntry) {
 	if element.IsEmpty() {
-		element.left = NewElement[KeyType, ValueType]()
-		element.right = NewElement[KeyType, ValueType]()
+		element.left = NewElement()
+		element.right = NewElement()
 	}
 	element.data = newData
 }
 
 // Zugriffsfunktion für den Schlüssel des Elements.
-func (element Element[KeyType, ValueType]) Key() KeyType {
+func (element Element) Key() string {
 	return element.data.Key()
 }
 
 // Zugriffsfunktion für den Wert des Elements.
-func (element Element[KeyType, ValueType]) Value() ValueType {
+func (element Element) Value() []string {
 	return element.data.Value()
 }
 
 // Zugriffsfunktion für die gesamten Daten des Elements.
-func (element Element[KeyType, ValueType]) Data() ElementData[KeyType, ValueType] {
+func (element Element) Data() *data.DictEntry {
 	return element.data
-}
-
-// String-Darstellung von Elementen.
-func (element Element[KeyType, ValueType]) String() string {
-	if element.IsEmpty() {
-		return "<empty>"
-	}
-	return fmt.Sprintf("%s", element.data.String())
-}
-
-// Gibt den Baum in In-Order-Darstellung aus.
-func (element Element[KeyType, ValueType]) InOrderString() string {
-	if element.IsEmpty() {
-		return ""
-	}
-	return fmt.Sprintf("%s%s\n%s", element.left.InOrderString(), element.data, element.right.InOrderString())
 }
