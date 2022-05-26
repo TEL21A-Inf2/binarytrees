@@ -13,6 +13,18 @@ Schreiben Sie eine Funktion `GetValue()` für den Element-Datentyp.
 Die Funktion soll einen `Key` erwarten und die entsprechenden Daten aus dem Baum
 heraussuchen.
 
+## Anzahl der Elemente
+
+Schreiben Sie eine Methode `Size()` für den Element-Datentyp.
+Die Funktion soll die Anzahl der nicht-leeren Elemente liefern, die der Baum
+unter dem Element hat.
+
+## Höhe des Baumes
+
+Schreiben Sie eine Methode `Height()` für den Element-Datentyp.
+Die Funktion soll die Anzahl der Elemente liefern, die auf dem längsten Pfad
+vom Wurzel-Element zu einem der Blätter liegen.
+
 ## Optimierung der `Add()`-Methode
 
 Schreiben Sie die Methode `Add()` des Element-Datentyps so um, dass sie *Tail-Recursion*
