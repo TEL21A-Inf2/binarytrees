@@ -1,5 +1,11 @@
 # Aufgaben zu binären Suchbäumen
 
+## Optimierung der `Add()`-Methode
+
+Schreiben Sie die Methode `Add()` des Element-Datentyps so um, dass sie *Tail-Recursion*
+verwendet. D.h. es soll nur einen einzigen rekursiven Aufruf geben und dieser soll ganz
+am Ende der Funktion stehen.
+
 ## Ausgabe von Bäumen erweitern: Mermaid-String generieren
 
 Fügen Sie eine Funktion zum Baum hinzu, die den Baum als Mermaid-Graph ausgibt.
