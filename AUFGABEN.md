@@ -8,7 +8,7 @@ Mermaid ist ein Text-Format, mit dem man Diagramme beschreiben kann,
 die dann z.B. als PDF oder in Browsern gerendert werden können.
 
 **Beispiel 1:**
-Der folgende Text repräsentiert einen einfachen Baum mit einem Knoten `A` als Wurzel,
+Ein einfacher Baum in Mermaid mit einem Knoten `A` als Wurzel,
 `B` als linkem und `C` als rechtem Kind:
 
 ```mermaid
@@ -18,7 +18,7 @@ graph TD
 ```
 
 **Beispiel 2:**
-Der folgende Text repräsentiert den gleichen Baum wie in Beispiel 1, allerdings wurden
+Der gleiche Baum wie in Beispiel 1, allerdings wurden
 den Knoten hier noch Labels gegeben:
 
 ```mermaid
