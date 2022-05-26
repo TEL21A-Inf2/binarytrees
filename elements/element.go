@@ -80,3 +80,16 @@ func (element Element) InOrderString() string {
 	}
 	return fmt.Sprintf("%s%s\n%s", element.left.InOrderString(), element.data, element.right.InOrderString())
 }
+
+// Fügt ein Element zum Baum hinzu.
+func (element *Element) Add(newData *data.DictEntry) {
+	if element.IsEmpty() {
+		element.setData(newData)
+		return
+	}
+	if newData.Key() < element.Key() {
+		element.left.Add(newData)
+	} else {
+		element.right.Add(newData)
+	}
+}
