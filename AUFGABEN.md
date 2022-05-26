@@ -19,6 +19,23 @@ Schreiben Sie die Methode `Add()` des Element-Datentyps so um, dass sie *Tail-Re
 verwendet. D.h. es soll nur einen einzigen rekursiven Aufruf geben und dieser soll ganz
 am Ende der Funktion stehen.
 
+## Baum-Datentyp
+
+Erstellen Sie einen Container-Datentyp, der einen Baum repräsentiert.
+
+Gehen Sie analog zum Container-Datentyp bei verketteten Listen vor.
+Der Container soll einen Pointer auf die Wurzel enthalten.
+Die Zugriffsfunktionen sollten an die Wurzel delegieren.
+
+Sie müssen nicht alle Methoden aus dem Element-Datentyp für den Baum übernehmen.
+Es genügen zunächst die Methoden `Add()` und `GetValue()`.
+Außerdem soll es einen Konstruktor für den neuen Baum geben.
+
+**Anmerkung:** Der bisherige Element-Datentyp repräsentiert auch schon einen Baum.
+Soweit wie der Baum bisher implementiert ist, ist das auch ausreichend.
+Für die folgenden Aufgaben wird es aber hilfreich sein, einen Baum-Datentyp
+zu haben, der die Elemente vor dem Client-Programmierer versteckt.
+
 ## Ausgabe von Bäumen erweitern: Mermaid-String generieren
 
 Fügen Sie eine Funktion zum Baum hinzu, die den Baum als Mermaid-Graph ausgibt.
