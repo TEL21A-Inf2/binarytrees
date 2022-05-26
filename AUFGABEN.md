@@ -7,6 +7,12 @@ Die Funktion soll einen String erwarten, das Element aufsuchen, das diesen Strin
 `Key` hat und einen Pointer auf dessen Datensatz liefern.
 Gibt es kein solches Element, soll `nil` geliefert werden.
 
+## Nachschlagen von Daten zu einem Schlüssel
+
+Schreiben Sie eine Funktion `GetValue()` für den Element-Datentyp.
+Die Funktion soll einen `Key` erwarten und die entsprechenden Daten aus dem Baum
+heraussuchen.
+
 ## Optimierung der `Add()`-Methode
 
 Schreiben Sie die Methode `Add()` des Element-Datentyps so um, dass sie *Tail-Recursion*
