@@ -83,3 +83,18 @@ graph TD
 - [Beschreibung zu Mermaid](https://mermaid-js.github.io)
 - [Beispiel 1 im Online-Editor]([![](https://mermaid.ink/img/pako:eNpNj0EOgjAQRa8ymTVeoAsTEI2JS91RF0M7QBMopEwXSLi7NWLiX83kvcX_K5rRMipsA00dPErtISWvrhRnBd0YZ86gjq63zrfPLy2qC3UhkFVQO7OYnndwqm4kL1ZgSDIQ13LYSQ6HwxGK_-ekPWY4cBjI2dRg_UCN0vHAGlU6LTcUe9Go_ZbUOFkSPlsnY0DVUJ-qIUUZ74s3qCRE_kmlozRo2K3tDVikSb4)](https://mermaid.live/edit#pako:eNpNj0EOgjAQRa8ymTVeoAsTEI2JS91RF0M7QBMopEwXSLi7NWLiX83kvcX_K5rRMipsA00dPErtISWvrhRnBd0YZ86gjq63zrfPLy2qC3UhkFVQO7OYnndwqm4kL1ZgSDIQ13LYSQ6HwxGK_-ekPWY4cBjI2dRg_UCN0vHAGlU6LTcUe9Go_ZbUOFkSPlsnY0DVUJ-qIUUZ74s3qCRE_kmlozRo2K3tDVikSb4))
 - [Beispiel 2 im Online-Editor]([![](https://mermaid.ink/img/pako:eNpNj0EOgjAQRa8ymTVeoAsTEI2JS91RF0M7QBMopEwXSLi7NWLiX83kvcX_K5rRMipsA00dPErtISWvrhRnBd0YZ86gjq63zrfPLy2qC3UhkFVQO7OYnndwqm4kL1ZgSDIQ13LYSQ6HwxGK_-ekPWY4cBjI2dRg_UCN0vHAGlU6LTcUe9Go_ZbUOFkSPlsnY0DVUJ-qIUUZ74s3qCRE_kmlozRo2K3tDVikSb4)](https://mermaid.live/edit#pako:eNpNj0EOgjAQRa8ymTVeoAsTEI2JS91RF0M7QBMopEwXSLi7NWLiX83kvcX_K5rRMipsA00dPErtISWvrhRnBd0YZ86gjq63zrfPLy2qC3UhkFVQO7OYnndwqm4kL1ZgSDIQ13LYSQ6HwxGK_-ekPWY4cBjI2dRg_UCN0vHAGlU6LTcUe9Go_ZbUOFkSPlsnY0DVUJ-qIUUZ74s3qCRE_kmlozRo2K3tDVikSb4))
+
+## Löschen von Elementen
+
+Implementieren Sie das Löschen von Elementen aus dem Baum, wie es in der Vorlesung
+besprochen wurde.
+
+Schreiben Sie eine Methode `Remove()` für den Baum-Datentyp.
+Die Funktion soll einen `Key` erwarten und das Element mit diesem `Key` suchen und
+aus dem Baum entfernen.
+
+Ist das zu löschende Element ein Blatt, kann es direkt entfernt werden.
+Hat es nur ein Kind, kann es einfach überbrückt werden.
+Ist es ein "echter" innerer Knoten, muss sein In-Order-Nachfolger oder -Vorgänger
+gesucht und das Element damit vertauscht werden. Anschließend muss es rekursiv
+von seiner neuen Position entfernt werden.
