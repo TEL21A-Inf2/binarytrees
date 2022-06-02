@@ -87,11 +87,11 @@ func (element *Element) Add(newData *data.DictEntry) {
 		element.setData(newData)
 		return
 	}
+	next := element.right
 	if newData.Key() < element.Key() {
-		element.left.Add(newData)
-	} else {
-		element.right.Add(newData)
+		next = element.left
 	}
+	next.Add(newData)
 }
 
 // Liefert einen Pointer auf den Datentsatz mit dem angegebenen Key.
