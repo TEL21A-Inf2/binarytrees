@@ -91,3 +91,26 @@ func ExampleElement_Add() {
 	// Haus: house, building
 	// Katze: cat, tiger
 }
+
+func ExampleElement_Get() {
+	element1 := NewElement()
+	fmt.Println(element1.InOrderString()) // Keine Ausgabe (leerer String)
+
+	data1 := data.NewDictEntry("Haus", "house", "building")
+	element1.Add(data1)
+	data2 := data.NewDictEntry("Katze", "cat", "tiger")
+	element1.Add(data2)
+	data3 := data.NewDictEntry("Fahrrad", "bicycle")
+	element1.Add(data3)
+
+	fmt.Println(element1.Get("Haus") == data1)
+	fmt.Println(element1.Get("Katze") == data2)
+	fmt.Println(element1.Get("Fahrrad") == data3)
+	fmt.Println(element1.Get("Nichts") == nil)
+
+	// Output:
+	// true
+	// true
+	// true
+	// true
+}

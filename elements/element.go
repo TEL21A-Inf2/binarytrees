@@ -93,3 +93,17 @@ func (element *Element) Add(newData *data.DictEntry) {
 		element.right.Add(newData)
 	}
 }
+
+// Liefert einen Pointer auf den Datentsatz mit dem angegebenen Key.
+func (element Element) Get(key string) *data.DictEntry {
+	if element.IsEmpty() {
+		return nil
+	}
+	if element.Key() == key {
+		return element.Data()
+	}
+	if key < element.Key() {
+		return element.left.Get(key)
+	}
+	return element.right.Get(key)
+}
