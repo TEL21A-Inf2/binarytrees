@@ -156,3 +156,32 @@ func ExampleElement_Size() {
 	// 2
 	// 3
 }
+
+func ExampleElement_Height() {
+	element1 := NewElement()
+	fmt.Println(element1.Height()) // Leerer Baum: Höhe 0
+
+	data1 := data.NewDictEntry("Haus", "house", "building")
+	element1.Add(data1)
+	fmt.Println(element1.Height()) // Nur eine Wurzel: Höhe 1
+	data2 := data.NewDictEntry("Katze", "cat", "tiger")
+	element1.Add(data2)
+	fmt.Println(element1.Height()) // Katze kommt rechts unter Haus: Höhe 2
+	data3 := data.NewDictEntry("Fahrrad", "bicycle")
+	element1.Add(data3)
+	fmt.Println(element1.Height()) // Fahrrad kommt links unter Haus: Höhe 2
+	data4 := data.NewDictEntry("Auto", "car")
+	element1.Add(data4)
+	fmt.Println(element1.Height()) // Auto kommt links unter Fahrrad: Höhe 3
+	data5 := data.NewDictEntry("Blume", "flower")
+	element1.Add(data5)
+	fmt.Println(element1.Height()) // Blume kommt rechts unter Auto: Höhe 4
+
+	// Output:
+	// 0
+	// 1
+	// 2
+	// 2
+	// 3
+	// 4
+}

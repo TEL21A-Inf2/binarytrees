@@ -124,3 +124,14 @@ func (element Element) Size() int {
 	}
 	return 1 + element.left.Size() + element.right.Size()
 }
+
+func (element Element) Height() int {
+	if element.IsEmpty() {
+		return 0
+	}
+	leftHeight, rightHeight := element.left.Height(), element.right.Height()
+	if leftHeight > rightHeight {
+		return leftHeight + 1
+	}
+	return rightHeight + 1
+}
