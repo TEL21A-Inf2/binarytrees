@@ -94,7 +94,6 @@ func ExampleElement_Add() {
 
 func ExampleElement_Get() {
 	element1 := NewElement()
-	fmt.Println(element1.InOrderString()) // Keine Ausgabe (leerer String)
 
 	data1 := data.NewDictEntry("Haus", "house", "building")
 	element1.Add(data1)
@@ -117,7 +116,6 @@ func ExampleElement_Get() {
 
 func ExampleElement_GetValue() {
 	element1 := NewElement()
-	fmt.Println(element1.InOrderString()) // Keine Ausgabe (leerer String)
 
 	data1 := data.NewDictEntry("Haus", "house", "building")
 	element1.Add(data1)
