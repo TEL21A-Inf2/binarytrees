@@ -30,3 +30,17 @@ func (tree Tree) GetValue(key string) ([]string, error) {
 func (tree Tree) MermaidString() string {
 	return fmt.Sprintf("graph TD\n%s", tree.root.MermaidStrings())
 }
+
+// Entfernt den Knoten mit dem angegebenen Element aus dem Baum.
+func (tree *Tree) Remove(key string) {
+	elementToRemove := tree.root.GetElement(key)
+	parentOfElementToRemove := tree.root.GetParent(elementToRemove)
+
+	if elementToRemove.IsLeaf() {
+		if elementToRemove == tree.root {
+			elementToRemove.Clear()
+			return
+		}
+		parentOfElementToRemove.RemoveChild(elementToRemove)
+	}
+}
