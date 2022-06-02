@@ -135,3 +135,19 @@ func (element Element) Height() int {
 	}
 	return rightHeight + 1
 }
+
+// Liefert die Mermaid-Pfeil-Darstellungen für die Knoten des Baumes.
+func (element Element) MermaidStrings() string {
+	result := ""
+	if element.IsEmpty() {
+		return result
+	}
+	formatString := "  %s --> %s\n"
+	if !element.left.IsEmpty() {
+		result += fmt.Sprintf(formatString, element.Key(), element.left.Key())
+	}
+	if !element.right.IsEmpty() {
+		result += fmt.Sprintf(formatString, element.Key(), element.right.Key())
+	}
+	return result
+}
