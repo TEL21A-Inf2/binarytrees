@@ -135,3 +135,24 @@ func ExampleElement_GetValue() {
 	// [bicycle] <nil>
 	// [] Key nicht im Baum enthalten
 }
+
+func ExampleElement_Size() {
+	element1 := NewElement()
+	fmt.Println(element1.Size())
+
+	data1 := data.NewDictEntry("Haus", "house", "building")
+	element1.Add(data1)
+	fmt.Println(element1.Size())
+	data2 := data.NewDictEntry("Katze", "cat", "tiger")
+	element1.Add(data2)
+	fmt.Println(element1.Size())
+	data3 := data.NewDictEntry("Fahrrad", "bicycle")
+	element1.Add(data3)
+	fmt.Println(element1.Size())
+
+	// Output:
+	// 0
+	// 1
+	// 2
+	// 3
+}

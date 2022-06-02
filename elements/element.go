@@ -116,3 +116,11 @@ func (element Element) GetValue(key string) ([]string, error) {
 	}
 	return data.Value(), nil
 }
+
+// Liefert die Anzahl der Elemente im Baum.
+func (element Element) Size() int {
+	if element.IsEmpty() {
+		return 0
+	}
+	return 1 + element.left.Size() + element.right.Size()
+}
