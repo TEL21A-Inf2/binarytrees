@@ -54,3 +54,29 @@ func (element *Element) RemoveChild(toRemove *Element) {
 		element.right.Clear()
 	}
 }
+
+// Liefert true, wenn das Element ein Halbblatt ist, also nur ein nicht-leeres Kind hat.
+func (element Element) IsSemiLeaf() bool {
+	return (element.left.IsEmpty() && !element.right.IsEmpty()) || (!element.left.IsEmpty() && element.right.IsEmpty())
+}
+
+// Liefert das einzige Kind, falls das Element ein Halbblatt ist.
+// Hat undefiniertes Verhalten, falls das Element kein Halbblatt ist.
+// (D.h. es geschieht keine Fehlerbehandlung.)
+func (element *Element) GetNonEmptyChild() *Element {
+	if element.left.IsEmpty() {
+		return element.right
+	}
+	return element.left
+}
+
+// Ersetzt das angegebene Kind durch den angegebenen Knoten.
+// Auch hier keine Fehlerbehandlung, d.h. das angegebene Kind muss wirklich eines der Kinder sein,
+// sonst verhält sich auch diese Funktion nicht korrekt.
+func (element *Element) ReplaceChild(elementToReplace, newChild *Element) {
+	if element.left == elementToReplace {
+		element.left = newChild
+	} else {
+		element.right = newChild
+	}
+}

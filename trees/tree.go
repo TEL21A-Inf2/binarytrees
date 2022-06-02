@@ -42,5 +42,16 @@ func (tree *Tree) Remove(key string) {
 			return
 		}
 		parentOfElementToRemove.RemoveChild(elementToRemove)
+		return
+	}
+
+	if elementToRemove.IsSemiLeaf() {
+		if elementToRemove == tree.root {
+			tree.root = tree.root.GetNonEmptyChild()
+			return
+		}
+		child := elementToRemove.GetNonEmptyChild()
+		parentOfElementToRemove.ReplaceChild(elementToRemove, child)
+		return
 	}
 }
