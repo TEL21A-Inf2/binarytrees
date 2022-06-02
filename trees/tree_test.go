@@ -146,3 +146,46 @@ func ExampleElement_Remove_SemiLeaf() {
 	// true
 	// true
 }
+
+func ExampleElement_Remove_Inner() {
+	t1 := NewTree()
+
+	data1 := data.NewDictEntry("Haus", "house", "building")
+	t1.Add(data1)
+	data2 := data.NewDictEntry("Katze", "cat", "tiger")
+	t1.Add(data2)
+	data3 := data.NewDictEntry("Fahrrad", "bicycle")
+	t1.Add(data3)
+	data4 := data.NewDictEntry("Blume", "flower")
+	t1.Add(data4)
+	data5 := data.NewDictEntry("Bauer", "farmer")
+	t1.Add(data5)
+	data6 := data.NewDictEntry("Esel", "donkey")
+	t1.Add(data6)
+
+	t1.Remove("Blume")
+
+	// Wir lassen uns die Fehlerwerte von GetValue geben.
+	_, e1 := t1.GetValue("Haus")
+	_, e2 := t1.GetValue("Fahrrad")
+	_, e3 := t1.GetValue("Katze")
+	_, e4 := t1.GetValue("Blume")
+	_, e5 := t1.GetValue("Bauer")
+	_, e6 := t1.GetValue("Esel")
+
+	// Außer Auto sollten alle Fehlerwerte nil sein.
+	fmt.Println(e1 == nil)
+	fmt.Println(e2 == nil)
+	fmt.Println(e3 == nil)
+	fmt.Println(e4 != nil)
+	fmt.Println(e5 == nil)
+	fmt.Println(e6 == nil)
+
+	// Output:
+	// true
+	// true
+	// true
+	// true
+	// true
+	// true
+}

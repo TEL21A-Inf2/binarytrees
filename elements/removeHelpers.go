@@ -80,3 +80,27 @@ func (element *Element) ReplaceChild(elementToReplace, newChild *Element) {
 		element.right = newChild
 	}
 }
+
+// Liefert den In-Order-Nachfolger des Elements.
+// Das rechte Kind muss existieren und darf nicht leer sein,
+// sonst hat die Funktion undefiniertes Verhalten.
+func (element *Element) GetInOrderSuccessor() *Element {
+	current := element.right
+	for !current.left.IsEmpty() {
+		current = current.left
+	}
+	return current
+}
+
+// Vertauscht die beiden angegebenen Elemente, falls sie nicht leer sind und keines die Wurzel ist.
+// Hat undefiniertes Verhalten, falls diese Bedingungen nicht erfüllt sind.
+func (element *Element) Swap(e1, e2 *Element) {
+	e1.data, e2.data = e2.data, e1.data
+
+	// TODO: Dieses Swap durch ein "richtiges" Swap ersetzen, das Pointer vertauscht.
+}
+
+// Liefert das rechte Kind.
+func (element *Element) GetRight() *Element {
+	return element.right
+}

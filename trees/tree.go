@@ -54,4 +54,12 @@ func (tree *Tree) Remove(key string) {
 		parentOfElementToRemove.ReplaceChild(elementToRemove, child)
 		return
 	}
+
+	inOrderSuccessor := elementToRemove.GetInOrderSuccessor()
+	tree.root.Swap(elementToRemove, inOrderSuccessor)
+	// Ab dem rechten Kind des elementToRemove rekursiv weitermachen.
+	// Hier wenden wir einen (schmutzigen) Trick an und konstruieren Hilfsweise einen Baum,
+	// dessen Wurzel das rechte Kind des elementToRemove ist.
+	t := Tree{elementToRemove.GetRight()}
+	t.Remove(key)
 }
