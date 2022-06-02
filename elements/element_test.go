@@ -114,3 +114,26 @@ func ExampleElement_Get() {
 	// true
 	// true
 }
+
+func ExampleElement_GetValue() {
+	element1 := NewElement()
+	fmt.Println(element1.InOrderString()) // Keine Ausgabe (leerer String)
+
+	data1 := data.NewDictEntry("Haus", "house", "building")
+	element1.Add(data1)
+	data2 := data.NewDictEntry("Katze", "cat", "tiger")
+	element1.Add(data2)
+	data3 := data.NewDictEntry("Fahrrad", "bicycle")
+	element1.Add(data3)
+
+	fmt.Println(element1.GetValue("Haus"))
+	fmt.Println(element1.GetValue("Katze"))
+	fmt.Println(element1.GetValue("Fahrrad"))
+	fmt.Println(element1.GetValue("Nichts"))
+
+	// Output:
+	// [house building] <nil>
+	// [cat tiger] <nil>
+	// [bicycle] <nil>
+	// [] Key nicht im Baum enthalten
+}

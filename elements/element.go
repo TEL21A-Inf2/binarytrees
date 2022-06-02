@@ -107,3 +107,12 @@ func (element Element) Get(key string) *data.DictEntry {
 	}
 	return element.right.Get(key)
 }
+
+// Liefert den Wert zum angegebenen Key.
+func (element Element) GetValue(key string) ([]string, error) {
+	data := element.Get(key)
+	if data == nil {
+		return make([]string, 0), fmt.Errorf("Key nicht im Baum enthalten")
+	}
+	return data.Value(), nil
+}
